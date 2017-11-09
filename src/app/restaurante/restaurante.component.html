@@ -1,48 +1,43 @@
 
-<form class="form-validate mb-lg">
+<form name="restauranteForm" (ngSubmit)="cadastrar($event)" class="form-validate mb-lg">
   <fieldset>
     <div class="form-group has-feedback"><label class="col-sm-3 control-label">Nome do Restaurante:</label>
-      <div class="col-md-6"><input class="form-control" type="text" placeholder="Ex: LM09"></div>
+      <div class="col-md-6"><input name="nm_restaurante" [(ngModel)]="newRestaurante.nm_restaurante" class="form-control" type="text" placeholder="Ex: LM09"></div>
     </div>
   </fieldset>
   <fieldset>
     <div class="form-group has-feedback"><label class="col-sm-3 control-label">Código do restaurante:</label>
-      <div class="col-md-6"><input class="form-control" type="text" placeholder="Ex: 4002"></div>
-    </div>
-  </fieldset>
-  <fieldset>
-    <div class="form-group has-feedback"><label class="col-sm-3 control-label">Cep:</label>
-      <div class="col-md-6"><input class="form-control" type="text" placeholder="Ex: 11724-175"></div>
-    </div>
-  </fieldset>
-  <fieldset>
-    <div class="form-group has-feedback"><label class="col-sm-3 control-label">Endereço :</label>
-      <div class="col-md-6"><input class="form-control" type="text" placeholder="Ex: Avenida Jandira"></div>
+      <div class="col-md-6"><input name="cd_restaurante" [(ngModel)]="newRestaurante.cd_restaurante" class="form-control" type="text" placeholder="Ex: 4002"></div>
     </div>
   </fieldset>
   <fieldset>
     <div class="form-group has-feedback"><label class="col-sm-3 control-label">Número :</label>
-      <div class="col-md-6"><input class="form-control" type="text" placeholder="Ex: 295"></div>
+      <div class="col-md-6"><input name="endereco.numero" [(ngModel)]="newRestaurante.endereco.numero" class="form-control" type="text" placeholder="Ex: 295"></div>
     </div>
   </fieldset>
   <fieldset>
     <div class="form-group has-feedback"><label class="col-sm-3 control-label">Complemento:</label>
-      <div class="col-md-6"><input class="form-control" type="text" placeholder="Ex: 103"></div>
+      <div class="col-md-6"><input name="complemento" [(ngModel)]="newRestaurante.endereco.complemento" class="form-control" type="text" placeholder="Ex: 103"></div>
+    </div>
+  </fieldset>
+  <fieldset>
+    <div class="form-group has-feedback"><label class="col-sm-3 control-label">Cep:</label>
+      <div class="col-md-6"><input name="cep" [(ngModel)]="newRestaurante.endereco.cep" class="form-control" type="text" placeholder="Ex: 11724-175"></div>
     </div>
   </fieldset>
   <fieldset>
     <div class="form-group has-feedback"><label class="col-sm-3 control-label">Cidade:</label>
-      <div class="col-md-6"><input class="form-control" type="text" placeholder="Ex: São Paulo"></div>
+      <div class="col-md-6"><input name="cidade" [(ngModel)]="newRestaurante.endereco.cidade" class="form-control" type="text" placeholder="Ex: São Paulo"></div>
     </div>
   </fieldset>
   <fieldset>
     <div class="form-group has-feedback"><label class="col-sm-3 control-label">UF:</label>
-      <div class="col-md-6"><input class="form-control" type="text" placeholder="Ex: São Paulo"></div>
+      <div class="col-md-6"><input name="uf" [(ngModel)]="newRestaurante.endereco.uf" class="form-control" type="text" placeholder="Ex: São Paulo"></div>
     </div>
   </fieldset>
   <fieldset>
     <div class="form-group has-feedback"><label class="col-sm-3 control-label">País:</label>
-      <div class="col-md-6"><input class="form-control" type="text" placeholder="Ex: Brasil"></div>
+      <div class="col-md-6"><input name="pais" [(ngModel)]="newRestaurante.endereco.pais" class="form-control" type="text" placeholder="Ex: Brasil"></div>
     </div>
   </fieldset>
   <div class="right">

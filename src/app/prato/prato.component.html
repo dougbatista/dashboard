@@ -1,0 +1,91 @@
+            <form (keydown.enter)="$event.target.tagName == 'TEXTAREA'"  name="plateForm" (ngSubmit)="cadastrar($event)" class="form-validate mb-lg">
+  <fieldset>
+    <div class="form-group has-feedback"><label class="col-sm-3 control-label">Nome do prato:</label>
+      <div class="col-md-6"><input name="nm_prato" [(ngModel)]="nm_prato" class="form-control" type="text" placeholder=""></div>
+    </div>
+  </fieldset>
+  <fieldset>
+    <div class="form-group has-feedback"><label class="col-sm-3 control-label">Descrição pequena do prato:</label>
+      <div class="col-md-6"><input name="descricao_pequena_prato" [(ngModel)]="descricao_pequena_prato" class="form-control" type="text" placeholder=""></div>
+    </div>
+  </fieldset>
+  <fieldset>
+    <div class="form-group has-feedback"><label class="col-sm-3 control-label">Descrição completa do prato:</label>
+      <div class="col-md-6"><input name="descricao_prato" [(ngModel)]="descricao_prato" class="form-control" type="text" placeholder=""></div>
+    </div>
+  </fieldset>
+  <fieldset>
+    <div class="form-group has-feedback"><label class="col-sm-3 control-label">Foto do prato:</label>
+      <div class="col-md-6">
+        <input name="foto_prato" (change)="getFoto($event)" type="file" placeholder="">
+      </div>
+    </div>
+  </fieldset>
+  <fieldset>
+    <div class="form-group has-feedback"><label class="col-sm-3 control-label">Tipo do prato:</label>
+      <div class="col-md-6"><input name="tipo_prato" [(ngModel)]="tipo_prato" class="form-control" type="text" placeholder=""></div>
+    </div>
+  </fieldset>
+  <fieldset>
+    <div class="form-group has-feedback"><label class="col-sm-3 control-label">Categoria:</label>
+      <div class="col-md-6">
+        <select name="categoriaSelect" [(ngModel)]="categoriaSelect" (change)="loadSubCategs(categoriaSelect)" class="form-control">
+          <option *ngFor="let categoria of categorias" [ngValue]="categoria._id" class="form-control" type="text" placeholder="Selecione uma categoria">{{ categoria.nm_categoria }}</option>
+        </select>
+      </div>
+    </div>
+  </fieldset>
+  <fieldset>
+    <div class="form-group has-feedback"><label class="col-sm-3 control-label">Sub-categoria:</label>
+      <div class="col-md-6">
+        <select name="subCategoriaSelect" [(ngModel)]="categoria_id" class="form-control">
+          <option *ngFor="let subCategoria of subCategorias" [ngValue]="subCategoria._id">{{ subCategoria.nm_subCategoria}}</option>
+        </select>
+      </div>
+    </div>
+  </fieldset>
+  <fieldset>
+    <div class="form-group has-feedback"><label class="col-sm-3 control-label">Ingredientes</label>
+      <div class="col-md-6"><input name="ingredientes" [(ngModel)]="ingredientes.nm_ingrediente" class="form-control" type="text" placeholder=""></div>
+    </div>
+  </fieldset>
+  <fieldset *ngFor="let adicional of adicionais; let i = index;">
+    <div  class="form-group has-feedback"><label class="col-sm-3 control-label">Adicional:</label>
+      <div class="col-md-6"><input name="nmAdicional" [(ngModel)]="adicional.nm_adicional" class="form-control" type="text" placeholder=""></div>
+    </div>
+    <div (keyup.enter)="addAdicionais($event)" class="form-group has-feedback"><label class="col-sm-3 control-label">Valor:</label>
+      <div class="col-md-6"><input name="valor" [(ngModel)]="adicional.valor" class="form-control" type="text" placeholder=""></div>
+    </div>
+  </fieldset>
+  <fieldset (keyup.enter)="addRemoviveis($event)" *ngFor="let removivel of removiveis;">
+    <div class="form-group has-feedback"><label class="col-sm-3 control-label">Removiveis:</label>
+      <div class="col-md-6"><input name="removivel1" [(ngModel)]="removivel.nm_removivel" class="form-control" type="text" placeholder=""></div>
+    </div>
+  </fieldset>
+  <fieldset (keyup.enter)="addAcompanhamentos($event)" *ngFor="let acomp of acompanhamentos">
+    <div class="form-group has-feedback"><label class="col-sm-3 control-label">Acompanhamentos:</label>
+      <div class="col-md-6"><input name="acompanhamento1" [(ngModel)]="acomp.acompanhamento" class="form-control" type="text" placeholder=""></div>
+    </div>
+    <div class="form-group has-feedback"><label class="col-sm-3 control-label">Valor:</label>
+      <div class="col-md-6"><input name="valor1" [(ngModel)]="acomp.valor"  class="form-control" type="text" placeholder=""></div>
+    </div>
+  </fieldset>
+  <fieldset (keyup.enter)="addPontoCarne($event)" *ngFor="let pontoCar of ponto_carne ;">
+    <div class="form-group has-feedback"><label class="col-sm-3 control-label">Ponto da carne:</label>
+      <div class="col-md-6">
+        <input name="ponto1" [(ngModel)]="pontoCar.ponto" class="form-control" type="text" placeholder="">
+      </div>
+    </div>
+  </fieldset>
+  <fieldset>
+    <div class="form-group has-feedback"><label class="col-sm-3 control-label">Valor do prato:</label>
+      <div class="col-md-6">
+        <input name="valor_prato" [(ngModel)]="valor_prato" class="form-control" type="text" placeholder="">
+      </div>
+    </div>
+  </fieldset>
+  <div class="right">
+    <button class="btn btn-primary" type="submit">Cadastrar</button>
+    <button class="btn btn-primary" type="reset">Cancelar</button>
+  </div>
+</form>

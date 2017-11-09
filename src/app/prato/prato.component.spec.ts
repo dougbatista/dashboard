@@ -3,21 +3,21 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { PeddiClientComponent } from './peddi-client.component';
+import { PratoComponent } from './prato.component';
 
-describe('PeddiClientComponent', () => {
-  let component: PeddiClientComponent;
-  let fixture: ComponentFixture<PeddiClientComponent>;
+describe('PratoComponent', () => {
+  let component: PratoComponent;
+  let fixture: ComponentFixture<PratoComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PeddiClientComponent ]
+      declarations: [ PratoComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PeddiClientComponent);
+    fixture = TestBed.createComponent(PratoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

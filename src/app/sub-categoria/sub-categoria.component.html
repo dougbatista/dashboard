@@ -1,13 +1,17 @@
-
-<form class="form-validate mb-lg">
+ 
+<form name="subCategoriaForm" (ngSubmit)="cadastrar($event)" class="form-validate mb-lg">
   <fieldset>
     <div class="form-group has-feedback"><label class="col-sm-3 control-label">Nome da SubCategoria:</label>
-      <div class="col-md-6"><input class="form-control" type="text" placeholder=""></div>
+      <div class="col-md-6"><input name="nm_subCategoria" [(ngModel)]="newSubCategoria.nm_subCategoria" class="form-control" type="text" placeholder=""></div>
     </div>
   </fieldset>
   <fieldset>
     <div class="form-group has-feedback"><label class="col-sm-3 control-label">Categoria:</label>
-      <div class="col-md-6"><input class="form-control" type="text" placeholder="Implementar**"></div>
+      <div class="col-md-6">
+        <select name="categoria" [(ngModel)]="newSubCategoria.categoria_id" class="form-control" type="text" placeholder="Implementar**">
+          <option *ngFor="let categoria of categorias" [ngValue]="categoria._id" >{{ categoria.nm_categoria }}</option>
+        </select>
+      </div>
     </div>
   </fieldset>
   <div class="right">
