@@ -38,7 +38,9 @@ export class PratoComponent implements OnInit {
     private _subCategoriaService: SubCategoriasService,
     private _plateService: PratosServices) {
 
-      this._categoriasService.getCategorias()
+     let token = localStorage.getItem('token');
+
+     this._categoriasService.getCategorias(token)
       .subscribe(categorias => {
         this.categorias = categorias;
       }, err => {
@@ -46,12 +48,7 @@ export class PratoComponent implements OnInit {
       });
     }
 
-  ngOnInit() {
-
-    this.images = [{
-     foto_prato : "http://www.salud180.com/sites/www.salud180.com/files/134218877_1.jpg",
-    }]
-  }
+  ngOnInit() {}
 
   loadSubCategs(categoria) {
    this._subCategoriaService.getSubCategorias(categoria)

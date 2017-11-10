@@ -18,11 +18,13 @@ export class SubCategoriaComponent {
 
   constructor(private _subCategService: SubCategoriasService, 
     private _categoriaService: CategoriaService) {
-
-    this._categoriaService.getCategorias()
+    
+    let token = localStorage.getItem('token');
+  
+    this._categoriaService.getCategorias(token)
       .subscribe(categorias => {
         this.categorias = categorias;
-      });  
+      });   
   }
 
   cadastrar(event) {

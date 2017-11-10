@@ -20,8 +20,8 @@ export class CategoriaService {
     return this.http.post(`${ this.url.url_local() }/categorias`, categoria);
   }
 
-  getCategorias() {
-    return this.http.get(`${ this.url.url_local() }/categorias`)
+  getCategorias(id) {
+    return this.http.get(`${ this.url.url_local() }/categorias?/` + id)
       .map(res => res.json());
   }
 }

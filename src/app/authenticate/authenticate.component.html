@@ -1,18 +1,23 @@
-
-<form class="form-validate mb-lg login">
-  <fieldset>
-    <div class="form-group has-feedback"><label class="col-sm-3 control-label">Login:</label>
-      <div class="col-md-6"><input class="form-control" type="text" placeholder=""></div>
-    </div>
-  </fieldset>
-  <fieldset>
-    <div class="form-group has-feedback"><label class="col-sm-3 control-label">Senha:</label>
-      <div class="col-md-6"><input class="form-control" type="text" placeholder=""></div>
-    </div>
-  </fieldset>
-  
-  <div class="right">
-    <button class="btn btn-primary" type="submit">Cadastrar</button>
-    <button class="btn btn-primary" type="reset">Cancelar</button>
-  </div>
-</form>
+<section id="login">
+  <div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="form-wrap">
+              <h1>Login restaurante</h1>
+                  <form role="form" id="login-form" autocomplete="off">
+                      <div class="form-group">
+                          <label for="email" class="sr-only">Login</label>
+                          <input type="text" [(ngModel)]="cd_restaurante" name="email" id="email" class="form-control" placeholder="Login">
+                      </div>
+                      <div class="form-group">
+                          <label for="key" class="sr-only">Senha</label>
+                          <input type="password" [(ngModel)]="senha" name="key" id="key" class="form-control" placeholder="Password">
+                      </div>
+                      <a (click)="login()" id="btn-login" class="btn btn-custom btn-lg btn-block">Login</a>
+                  </form>
+                  <hr>
+            </div>
+      </div> <!-- /.col-xs-12 -->
+    </div> <!-- /.row -->
+  </div> <!-- /.container -->
+</section>

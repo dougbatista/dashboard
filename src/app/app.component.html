@@ -2,11 +2,12 @@
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="#">Peddi Controll</a>
+      <button class="navbar-brand" (click)="logout()" >Logout</button>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
+      <li class="active"><a [routerLink]="['']">Home</a></li>
       <li><a [routerLink]="['/restaurante/new']">Restaurante</a></li>
-      <li><a [routerLink]="['/categorias/new']">Nova categoria</a></li>
+      <li><a [routerLink]="['']">Nova categoria</a></li>
       <li><a [routerLink]="['/SubCategoria/new']">Nova subCategoria</a></li>
       <li><a [routerLink]="['/prato/new']">Novo prato</a></li>
       <li><a [routerLink]="['/garcom/new']">Novo garçom</a></li>

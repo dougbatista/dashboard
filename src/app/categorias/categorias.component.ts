@@ -17,7 +17,10 @@ export class CategoriasComponent {
   cd_restaurante;
   contentType;
 
-  constructor(private _categoriaService: CategoriaService){}
+  constructor(private _categoriaService: CategoriaService){
+
+    this.cd_restaurante = localStorage.getItem('token');
+  }
 
   getFoto(event) {}
 
@@ -31,8 +34,6 @@ export class CategoriasComponent {
       contentType: this.contentType
     }
 
-    console.log(this.newCategoria);
-
     this._categoriaService.addNewCategoria(this.newCategoria)
       .subscribe(() => {
         console.log('Categoria salva com sucesso!');
@@ -40,6 +41,4 @@ export class CategoriasComponent {
         JSON.stringify(err); 
       });
   }
-
- 
 }

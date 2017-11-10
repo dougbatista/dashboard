@@ -20,6 +20,8 @@ import { CategoriaService } from '../services/services.categoria';
 import { SubCategoriasService } from '../services/services.subCategorias';
 import { RestauranteService } from '../services/services.restaurante';
 import { PratosServices } from '../services/services.pratos';
+import { AuthGuard } from '../_guards/auth.guard';
+import { AuthService } from '../services/services.auth';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,9 @@ import { PratosServices } from '../services/services.pratos';
     SubCategoriasService,
     URLServices,
     RestauranteService,
-    PratosServices
+    PratosServices,
+    AuthGuard,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
