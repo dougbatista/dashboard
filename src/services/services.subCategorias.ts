@@ -17,12 +17,12 @@ export class SubCategoriasService {
   }
 
   addNewSubCategoria(subCategoria) {
-    return this.http.post(`${ this.url.url_local() }/subcategorias/new`, JSON.stringify(subCategoria),
+    return this.http.post(`${ this.url.url_dev() }/subcategorias/new`, JSON.stringify(subCategoria),
      { headers : this.headers });
   }
 
   getSubCategorias(categoria_id) {
-    return this.http.get(`${ this.url.url_local() }/subcategorias/` + categoria_id)
+    return this.http.get(`${ this.url.url_dev() }/subcategorias/` + categoria_id)
       .map(res => res.json());
   }
 }

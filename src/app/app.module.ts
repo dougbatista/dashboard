@@ -22,6 +22,8 @@ import { RestauranteService } from '../services/services.restaurante';
 import { PratosServices } from '../services/services.pratos';
 import { AuthGuard } from '../_guards/auth.guard';
 import { AuthService } from '../services/services.auth';
+import { MesaComponent } from './mesa/mesa.component';
+import { MesaServices } from '../services/services.mesa';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,7 @@ import { AuthService } from '../services/services.auth';
     SubCategoriaComponent,
     AuthenticateComponent,
     PratoComponent,
+    MesaComponent,
     
   ],
   imports: [
@@ -48,7 +51,8 @@ import { AuthService } from '../services/services.auth';
     RestauranteService,
     PratosServices,
     AuthGuard,
-    AuthService
+    AuthService,
+    MesaServices
   ],
   bootstrap: [AppComponent]
 })

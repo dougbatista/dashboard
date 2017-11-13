@@ -17,11 +17,11 @@ export class CategoriaService {
   }
 
   addNewCategoria(categoria) {
-    return this.http.post(`${ this.url.url_local() }/categorias`, categoria);
+    return this.http.post(`${ this.url.url_dev() }/categorias`, categoria);
   }
 
   getCategorias(id) {
-    return this.http.get(`${ this.url.url_local() }/categorias?/` + id)
+    return this.http.get(`${ this.url.url_dev() }/categorias?/` + id)
       .map(res => res.json());
   }
 }

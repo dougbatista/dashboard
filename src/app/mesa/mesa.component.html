@@ -1,0 +1,21 @@
+<form name="categoriaForm" (ngSubmit)="addNewMesa($event)" class="form-validate mb-lg">
+  <fieldset>
+    <div class="form-group has-feedback"><label class="col-sm-3 control-label">Código da mesa</label>
+      <div class="col-md-6"><input name="numero_mesa" [(ngModel)]="mesaModel.numero_mesa" class="form-control" type="text" placeholder="Ex: befresh10"></div>
+    </div>
+  </fieldset>
+  <fieldset>
+    <div class="form-group has-feedback"><label class="col-sm-3 control-label">Quantidade de Cadeiras:</label>
+      <div class="col-md-6"><input name="cadeiras" [(ngModel)]="mesaModel.quantidade_cadeiras" class="form-control" type="number" placeholder="Ex: 5"></div>
+    </div>
+  </fieldset>
+  <fieldset>
+    <div class="form-group has-feedback"><label class="col-sm-3 control-label">Código do restaurante:</label>
+      <div class="col-md-6"><input name="cd_restaurante" [(ngModel)]="mesaModel.cd_restaurante" class="form-control" type="number" placeholder="Ex: 5"></div>
+    </div>
+  </fieldset>
+  <div class="right">
+    <button class="btn btn-primary" type="submit">Cadastrar</button>
+    <button class="btn btn-primary" type="reset">Cancelar</button>
+  </div>
+</form>

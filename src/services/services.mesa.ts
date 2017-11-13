@@ -3,21 +3,21 @@ import { Injectable } from '@angular/core';
 import { URLServices } from './services.url';
 
 @Injectable()
-export class RestauranteService {
+export class MesaServices {
 
   http: Http;
   headers: Headers;
   url: URLServices;
 
-  constructor(http: Http, url: URLServices) {
-    this.url = url;
+  constructor(http: Http, url: URLServices){
+
     this.http = http;
+    this.url = url;
     this.headers = new Headers();
     this.headers.append('Content-Type', 'application/json');
   }
 
-  addNewRestaurant(restaurant) {
-    return this.http.post(`${ this.url.url_dev() }/restaurant/new`, restaurant,
-     { headers: this.headers });
+  addNewMesa(mesa) {
+    return this.http.post(`${this.url.url_dev()}/tables/new/`, mesa);
   }
 }

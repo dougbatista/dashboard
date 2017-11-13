@@ -17,7 +17,7 @@ export class PratosServices {
   }
 
   addNewPlate(plate) {
-    return this.http.post(`${ this.url.url_local() }/pratos/new`, plate,
+    return this.http.post(`${ this.url.url_dev() }/pratos/new`, plate,
      { headers: this.headers });
   }
 }

@@ -18,7 +18,7 @@ export class AuthService {
 
   auth(data) {
     return new Promise ((resolve, reject) => {
-      this.http.post(`${ this.url.url_local()}/autenticar-restaurante`, data)
+      this.http.post(`${ this.url.url_dev()}/autenticar-restaurante`, data)
       .subscribe((res) => {
         let data = res.json();
         localStorage.setItem('token', data);
