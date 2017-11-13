@@ -1,4 +1,4 @@
-<form name="categoriaForm" (ngSubmit)="addNewMesa($event)" class="form-validate mb-lg">
+<form name="categoriaForm" (keydown.enter)="$event.target.tagName == 'TEXTAREA'"  (ngSubmit)="addNewMesa($event)" class="form-validate mb-lg">
   <fieldset>
     <div class="form-group has-feedback"><label class="col-sm-3 control-label">Código da mesa</label>
       <div class="col-md-6"><input name="numero_mesa" [(ngModel)]="mesaModel.numero_mesa" class="form-control" type="text" placeholder="Ex: befresh10"></div>

@@ -1,5 +1,5 @@
 
-<form name="garcomForm" (ngSubmit)="cadastrar($event)" class="form-validate mb-lg">
+<form name="garcomForm" (keydown.enter)="$event.target.tagName == 'TEXTAREA'"  (ngSubmit)="cadastrar($event)" class="form-validate mb-lg">
   <fieldset>
     <div class="form-group has-feedback"><label class="col-sm-3 control-label">Nome do garçom:</label>
       <div class="col-md-6"><input name="nm_funcionario" [(ngModel)]="newGarcom.nm_funcionario" class="form-control" type="text" placeholder=""></div>
